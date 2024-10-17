@@ -71,32 +71,35 @@
 // });
 
 
-import { View, Text,StyleSheet } from 'react-native'
+import { View,  } from 'react-native'
 import React from 'react'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
+import { Link } from 'expo-router'
+
 
 const HomeScreen = () => {
-  return (
-    <View>
-    <ThemedView style={styles.titleContainer}>
-
-      {/* <Text  >Hello world</Text> */}
-     <ThemedText type='title'>Hello world
+  console.log('hello');
+  alert('hello')
 
   
-      </ThemedText>
-    </ThemedView>
+  return (
+    <View style={{
+      flex:1,
+      justifyContent:'center',
+      alignContent:'center',
+    
+    }}>
+     <ThemedText type='title' >Hello world</ThemedText>
+    <Link href={"/About"} style={{
+      fontSize:30
+         }}>About</Link>
+     <Link href={"/Contact"} style={{
+      fontSize:30
+         }}>Contact</Link>
     </View>
   )
 }
-const styles=StyleSheet.create({
-  titleContainer:{
-    flexDirection:'row',
-    alignItems:'center',
-    gap:8,
 
-  }
-})
 
 export default HomeScreen
